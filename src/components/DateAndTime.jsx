@@ -30,7 +30,7 @@ const DateAndTime = () => {
     }, []);
 
     return (
-        <div className="lg:flex justify-between bg-base-100 p-2 rounded-md shadow-xl gap-5 text-xl font-semibold my-5">
+        <div className="lg:flex gap-5 text-xl font-semibold my-5">
             <div className='flex items-center gap-3'>
                 <p>{currentDate}</p> {/* Display today's date */}
                 <p>{currentDateTime}</p> {/* Display the current time */}

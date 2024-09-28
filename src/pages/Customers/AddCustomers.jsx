@@ -31,7 +31,7 @@ const AddCustomers = () => {
                 addedBy: user.email  // Ensure addedBy field contains the current user's email
             };
 
-            const response = await axios.post('http://localhost:5000/api/customers/add', customerData);
+            const response = await axios.post('https://billing-manager-server.vercel.app/api/customers/add', customerData);
             if (response.status === 201) {
                 alert('Customer created successfully!');
                 setFormData({

@@ -38,7 +38,7 @@ const EditUserModal = ({ customer, isOpen, onClose, currentUser, handleUpdateCus
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.put(`http://localhost:5000/api/customers/update/${customer._id}`, {
+            const response = await axios.put(`https://billing-manager-server.vercel.app/api/customers/update/${customer._id}`, {
                 ...formData,
                 updatedBy: currentUser ? currentUser.email : 'Unknown',
             });

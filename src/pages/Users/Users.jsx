@@ -9,7 +9,7 @@ const Users = () => {
     // Function to fetch user data from the API
     const fetchUsers = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/users');
+            const response = await axios.get('https://billing-manager-server.vercel.app/api/users');
             setUsers(response.data); // Store user data in state
         } catch (err) {
             setError(err.message); // Set error message if the request fails

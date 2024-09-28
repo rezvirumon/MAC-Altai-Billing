@@ -22,7 +22,7 @@ const Search = () => {
             setResults([]); // Clear previous results before fetching new data
 
             try {
-                const response = await axios.get(`http://localhost:5000/api/customers/search?query=${query}`);
+                const response = await axios.get(`https://billing-manager-server.vercel.app/api/customers/search?query=${query}`);
                 setResults(response.data); // Set the results in state
                 setIsOpen(true); // Open the results dropdown
             } catch (err) {

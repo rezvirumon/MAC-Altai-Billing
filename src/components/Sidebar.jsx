@@ -48,15 +48,15 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
             <div
                 className={`bg-gray-800 text-white min-h-screen flex flex-col
                 ${isMobile ? `absolute z-20 transition-transform transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}` : 'relative'}
-                ${isSidebarOpen ? 'w-64' : 'w-16'}
+                ${isSidebarOpen ? 'w-64' : 'w-12'}
                 transition-all duration-300 ease-in-out`}
             >
                 {/* Sidebar Header */}
                 <div className="flex items-center justify-between p-4">
-                    <div className={`text-2xl font-bold transition-opacity duration-300 h-24 ${isSidebarOpen ? 'opacity-100' : 'flex items-center justify-center'}`}>
+                    <div className={`text-2xl font-bold transition-opacity duration-300 h-24 ${isSidebarOpen ? 'opacity-100 mx-auto' : 'flex items-center justify-center'}`}>
                         <img
                             src={user.photoURL} alt=""
-                            className='h-24 object-cover'
+                            className='h-24 object-cover rounded-full'
                         />
                     </div>
 
@@ -106,7 +106,7 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
                                 </span>
                             </button>
                             {isDropdownOpen && (
-                                <ul className={`ml-3 space-y-2`}>
+                                <ul className={`space-y-2`}>
                                     {userLinks.map(link => (
                                         <li key={link.path}>
                                             <Link

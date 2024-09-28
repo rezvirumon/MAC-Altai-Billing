@@ -29,7 +29,7 @@ const Home = () => {
         const fetchCustomers = async () => {
             setLoading(true); // Start loading
             try {
-                const response = await axios.get('http://localhost:5000/api/customers');
+                const response = await axios.get('https://billing-manager-server.vercel.app/api/customers');
                 const data = response.data;
                 setCustomers(data);
                 setTotalCustomers(data.length);
@@ -119,34 +119,34 @@ const Home = () => {
     };
 
     return (
-        <div className='flex flex-col min-h-screen p-6 container mx-auto lg:w-full w-[90vw]'>
+        <div className='flex flex-col min-h-screen p-6 container mx-auto lg:w-full w-[97vw]'>
                 <h3 className='text-2xl font-bold mb-5'>Dashboard</h3>
                 <div>
                     <DateAndTime></DateAndTime>
                 </div>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mb-5 gap-6 w-full'>
                 {[{
-                    label: 'Total Customers', value: totalCustomers, icon: <FaUsers className="text-white text-4xl" />, color: 'from-blue-500 to-blue-700'
+                    label: 'Total Customers', value: totalCustomers, icon: <FaUsers className="text-white text-5xl" />, color: 'from-blue-500 to-blue-700'
                 }, {
-                    label: 'Collections This Month', value: totalCollections, icon: <FaMoneyBillWave className="text-white text-4xl" />, color: 'from-green-500 to-green-700'
+                    label: 'Collections This Month', value: totalCollections, icon: <FaMoneyBillWave className="text-white text-5xl" />, color: 'from-green-500 to-green-700'
                 }, {
-                    label: 'Today\'s Collections', value: todayCollections, icon: <FaCalendarDay className="text-white text-4xl" />, color: 'from-yellow-500 to-yellow-700'
+                    label: 'Today\'s Collections', value: todayCollections, icon: <FaCalendarDay className="text-white text-5xl" />, color: 'from-yellow-500 to-yellow-700'
                 }, {
-                    label: 'Total Due', value: totalDue, icon: <FaRegMoneyBillAlt className="text-white text-4xl" />, color: 'from-red-500 to-red-700'
+                    label: 'Total Due', value: totalDue, icon: <FaRegMoneyBillAlt className="text-white text-5xl" />, color: 'from-red-500 to-red-700'
                 }, {
-                    label: 'Active Customers', value: activeCustomers, icon: <FaUserCheck className="text-white text-4xl" />, color: 'from-green-500 to-green-700'
+                    label: 'Active Customers', value: activeCustomers, icon: <FaUserCheck className="text-white text-5xl" />, color: 'from-green-500 to-green-700'
                 }, {
-                    label: 'Inactive Customers', value: inactiveCustomers, icon: <FaUserAlt className="text-white text-4xl" />, color: 'from-red-500 to-red-700'
+                    label: 'Inactive Customers', value: inactiveCustomers, icon: <FaUserAlt className="text-white text-5xl" />, color: 'from-red-500 to-red-700'
                 }, {
-                    label: 'Paid Count', value: paidCount, icon: <FaCheckCircle className="text-white text-4xl" />, color: 'from-blue-400 to-blue-600'
+                    label: 'Paid Count', value: paidCount, icon: <FaCheckCircle className="text-white text-5xl" />, color: 'from-blue-400 to-blue-600'
                 }, {
-                    label: 'Unpaid Count', value: unpaidCount, icon: <FaExclamationCircle className="text-white text-4xl" />, color: 'from-red-400 to-red-600'
+                    label: 'Unpaid Count', value: unpaidCount, icon: <FaExclamationCircle className="text-white text-5xl" />, color: 'from-red-400 to-red-600'
                 }, {
-                    label: 'New Customers', value: newCustomers, icon: <FaPlusCircle className="text-white text-4xl" />, color: 'from-green-400 to-green-600'
+                    label: 'New Customers', value: newCustomers, icon: <FaPlusCircle className="text-white text-5xl" />, color: 'from-green-400 to-green-600'
                 }, {
-                    label: 'Upcoming Expirations', value: upcomingExpirations, icon: <FaHourglassHalf className="text-white text-4xl" />, color: 'from-orange-400 to-orange-600'
+                    label: 'Upcoming Expirations', value: upcomingExpirations, icon: <FaHourglassHalf className="text-white text-5xl" />, color: 'from-orange-400 to-orange-600'
                 }, {
-                    label: 'Average Payment', value: averagePayment.toFixed(2), icon: <FaFlagCheckered className="text-white text-4xl" />, color: 'from-orange-500 to-orange-700'
+                    label: 'Average Payment', value: averagePayment.toFixed(2), icon: <FaFlagCheckered className="text-white text-5xl" />, color: 'from-orange-500 to-orange-700'
                 }].map((stat, index) => (
                     <div key={index} className={`bg-gradient-to-r ${stat.color} text-white p-6 rounded-lg shadow-lg`}>
                         <div className="flex items-center justify-between">

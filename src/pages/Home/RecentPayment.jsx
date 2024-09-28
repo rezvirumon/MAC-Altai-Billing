@@ -7,7 +7,7 @@ const RecentPayment = () => {
     useEffect(() => {
         const fetchRecentPayments = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/customers');
+                const response = await axios.get('https://billing-manager-server.vercel.app/api/customers');
                 const customers = response.data;
 
                 const payments = customers

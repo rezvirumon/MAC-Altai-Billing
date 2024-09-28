@@ -21,7 +21,7 @@ const ListCustomers = () => {
 
     const fetchCustomers = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/customers', {
+            const response = await axios.get('https://billing-manager-server.vercel.app/api/customers', {
                 headers: { Authorization: `Bearer ${user.token}` },
             });
             setCustomers(response.data);
@@ -107,7 +107,7 @@ const ListCustomers = () => {
             });
 
             if (willDelete) {
-                await axios.delete(`http://localhost:5000/api/customers/delete/${customerId}`, {
+                await axios.delete(`https://billing-manager-server.vercel.app/api/customers/delete/${customerId}`, {
                     headers: { Authorization: `Bearer ${user.token}` },
                 });
 
@@ -123,7 +123,7 @@ const ListCustomers = () => {
     };
 
     return (
-        <div className="max-w-7xl mx-auto p-8">
+        <div className="max-w-7xl mx-auto p-2">
             <h3 className="text-center text-4xl font-extrabold mb-10 text-gray-900 tracking-wide">Customer List</h3>
 
             {/* Search and Filter Section */}
@@ -231,7 +231,7 @@ const ListCustomers = () => {
                             </li>
                         </ul>
 
-                        <div className="bg-white hover:bg-gray-100  shadow-md p-6 rounded-lg border border-gray-200">
+                        <div className="bg-white hover:bg-gray-100  shadow-md p-2 rounded-lg border border-gray-200">
                             <h5 className="font-semibold text-gray-800 mb-4">Payment Info</h5>
                             <ul className="text-gray-700 space-y-2">
                                 <li>

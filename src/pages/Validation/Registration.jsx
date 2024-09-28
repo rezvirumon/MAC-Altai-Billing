@@ -54,7 +54,7 @@ const Registration = () => {
             });
 
             // Send user data to backend (MongoDB)
-            const response = await fetch('http://localhost:5000/api/users', {
+            const response = await fetch('https://billing-manager-server.vercel.app/api/users', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -23,7 +23,7 @@ const AddPayment = ({ customer, isOpen, onClose, handleUpdateCustomer }) => {
             };
 
             // Make the API call to update the customer with the new payAmount and connectionDate
-            const response = await axios.put(`http://localhost:5000/api/customers/update/${customer._id}`, updatedCustomer);
+            const response = await axios.put(`https://billing-manager-server.vercel.app/api/customers/update/${customer._id}`, updatedCustomer);
             
             // Ensure handleUpdateCustomer is defined and a function
             if (typeof handleUpdateCustomer === 'function') {

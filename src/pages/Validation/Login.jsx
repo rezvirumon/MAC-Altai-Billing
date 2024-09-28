@@ -61,7 +61,7 @@ const Login = () => {
             navigate('/');
         } catch (err) {
             setError(err.message);
-            
+
             // Show error notification with SweetAlert2
             Swal.fire({
                 icon: 'error',
@@ -72,72 +72,77 @@ const Login = () => {
     };
 
     return (
-        <div className="min-h-screen flex flex-col justify-center items-center bg-gray-200">
-            <div className="bg-white shadow-lg rounded-xl w-full max-w-sm p-10">
-                <div className="cursor-pointer">
-                    <div>
-                        <img
-                            src="https://icc-golapganj.netlify.app/assets/ICC-Logo-CgisyQxn.png"
-                            alt="ICC-Logo"
-                            className="w-24 mx-auto"
-                        />
-                    </div>
-                    <h3 className="text-center text-lg font-semibold divider">ADMIN PANEL</h3>
-                </div>
-                <form onSubmit={handleSubmit}>
-                    {/* Email */}
-                    <div>
-                        <label className="label font-semibold">Email</label>
-                        <input
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            placeholder="Enter your email"
-                            className="input input-bordered w-full px-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            required
-                        />
-                    </div>
-                    {/* Password */}
-                    <div>
-                        <label className="label font-semibold">Password</label>
-                        <input
-                            type="password"
-                            name="password"
-                            value={formData.password}
-                            onChange={handleChange}
-                            placeholder="Enter your password"
-                            className="input input-bordered w-full px-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            required
-                        />
-                    </div>
-                    {/* Remember Me Checkbox */}
-                    <div className="flex items-center my-3">
-                        <label className="flex items-center cursor-pointer">
-                            <input
-                                type="checkbox"
-                                checked={rememberMe}
-                                onChange={handleRememberMeChange}
-                                className="mr-2"
+        <div className="min-h-screen flex flex-col items-center bg-white ">
+            <div>
+                <div className="bg-white border w-[350px] rounded shadow mt-16">
+                    <div className="cursor-pointer">
+                        <div className='bg-base-300 border mx-auto p-2'>
+                            <img
+                                src="https://billing.iccbd.com/uploadedfile/75F588C3963A32C56BF9EC99C89471CD_850469C0E716EAEBF7EF43F76C01CEBF_banner3.jpg"
+                                alt="ICC-Logo"
+                                className="w-3/6 mx-auto"
                             />
-                            <span className="label">Remember Me</span>
-                        </label>
-                    </div>
+                        </div>
+                        <div className='border bg-base-200 text-center p-1 font-semibold'>
+                            <h3>ADMIN PANEL</h3>
+                        </div>
 
-                    {/* Error Message */}
-                    {error && <p className="text-red-500 mb-4">{error}</p>}
-                    {/* Submit Button */}
-                    <div>
-                        <button
-                            type="submit"
-                            className="btn w-full text-lg font-semibold bg-green-500 hover:bg-green-600 text-white rounded-md transition-all"
-                        >
-                            Login
-                        </button>
                     </div>
-                </form>
+                    <form onSubmit={handleSubmit} className='p-4 space-y-3'>
+                        {/* Email */}
+                        <div>
+                           
+                            <input
+                                type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                placeholder="username"
+                                className="input input-bordered h-[40px] w-full px-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required
+                            />
+                        </div>
+                        {/* Password */}
+                        <div>
+                         
+                            <input
+                                type="password"
+                                name="password"
+                                value={formData.password}
+                                onChange={handleChange}
+                                placeholder="password"
+                                className="input input-bordered h-[40px] w-full px-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required
+                            />
+                        </div>
+                        {/* Remember Me Checkbox */}
+                        <div className="flex items-center">
+                            <label className="flex items-center cursor-pointer">
+                                <input
+                                    type="checkbox"
+                                    checked={rememberMe}
+                                    onChange={handleRememberMeChange}
+                                    className="mr-2"
+                                />
+                                <span className="label">Remember Me</span>
+                            </label>
+                        </div>
+
+                        {/* Error Message */}
+                        {error && <p className="text-red-500 mb-4">{error}</p>}
+                        {/* Submit Button */}
+                        <div>
+                            <button
+                                type="submit"
+                                className="btn w-full text-lg font-semibold bg-green-500 hover:bg-green-600 text-white rounded-md transition-all"
+                            >
+                                Login
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <label className="text-sm mt-10 font-semibold">Powered by ICC Communication Golapganj POP</label>
+            <label className="text-sm mt-8">Powered by ICC Communication Golapganj POP</label>
         </div>
     );
 };

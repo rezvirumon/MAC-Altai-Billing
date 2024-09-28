@@ -7,7 +7,7 @@ const UpCommingExpired = () => {
     useEffect(() => {
         const fetchExpiredCustomers = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/customers/search?query=FC:A6:21:AB:AB:33');
+                const response = await axios.get('https://billing-manager-server.vercel.app/api/customers/search?query=FC:A6:21:AB:AB:33');
                 const customers = response.data;
                 const upcomingExpired = customers.filter(customer => customer.remainingDays > 0 && customer.remainingDays <= 2);
                 setExpiredCustomers(upcomingExpired);

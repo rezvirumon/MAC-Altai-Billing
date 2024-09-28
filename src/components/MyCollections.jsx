@@ -12,7 +12,7 @@ const MyCollections = () => {
     useEffect(() => {
         const fetchCustomers = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/customers');
+                const response = await axios.get('https://billing-manager-server.vercel.app/api/customers');
                 setCustomers(response.data);
                 setLoading(false);
             } catch (err) {
@@ -28,7 +28,7 @@ const MyCollections = () => {
     if (error) return <div>{error}</div>;
 
     return (
-        <div className="container mx-auto p-4">
+        <div className="container mx-auto">
             <h1 className="text-2xl font-bold mb-4">My Collections</h1>
             <div className="overflow-x-auto">
                 <table className="table-auto w-full border-collapse border border-gray-300">

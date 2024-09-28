@@ -26,7 +26,7 @@ const Profile = () => {
 
 
     return (
-        <div className='min-h-screen bg-gray-100 p-4 w-[90vw] max-w-7xl mx-auto'>
+        <div className='min-h-screen bg-gray-100 p-4 w-[95vw] max-w-7xl mx-auto'>
             <div className='bg-white shadow-lg rounded-lg p-6'>
                 <div className='flex flex-col lg:flex-row items-center lg:justify-between'>
                     <div className='flex flex-col lg:flex-row items-center'>
